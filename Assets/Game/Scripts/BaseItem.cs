@@ -15,7 +15,20 @@ public class BaseItem : MonoBehaviour
     // Consumables
     public class Potion : BaseItem
     {
-        // Additional properties and methods specific to potions
+        public int healingAmount = 20; // Amount of health the potion restores
+
+        public override void Use()
+        {
+           
+            PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.Heal(healingAmount);
+            }
+
+            // Destroy the potion object after it is used
+            Destroy(gameObject);
+        }
     }
 
     public class Food : BaseItem
