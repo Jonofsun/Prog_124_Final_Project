@@ -5,11 +5,13 @@ using UnityEngine;
 public class ShowHideCanvus : MonoBehaviour
 {
     private Canvas menuSystem;
+    public GameObject PauseMenuCanvus;
     // Start is called before the first frame update
     void Start()
     {
+
         menuSystem = GetComponent<Canvas>();
-        menuSystem.enabled =! menuSystem.enabled;
+        menuSystem.enabled = true;
     }
 
     // Update is called once per frame
